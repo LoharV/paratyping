@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* GOOGLE FONTS
+font-family: 'Baloo 2', cursive;
+font-family: 'Baloo Da 2', cursive;
+font-family: 'Baloo Thambi 2', cursive;
+font-family: 'Maven Pro', sans-serif;
+font-family: 'Montserrat', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #F1F1F1;
+}
+
+/* Navigation Bar Starts Here */
+
+.navbar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  height: 60px;
+  font-family: 'Baloo Thambi 2', cursive;
+  /*  box-shadow: 1px 1px 15px #464AFF;*/
+}
+
+.navbar .logo h1 {
+  text-transform: uppercase;
+  color: black
+}
+
+.navbar .logo h1 span {
+  color: #AC2B48;
+}
+
+.logo {
+  margin-left: 20px;
+  flex-basis: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo i {
+  color: #AC2B48;
+  font-size: 30px;
+}
+
+.logo h1 {
+  margin-left: 10px;
+  color: white;
+  font-size: 25px;
+}
+
+/* Navigation Bar Ends Here */
+
+.logo,
+.navbar #list,
+.navbar #list li a {
+  display: flex;
+  align-items: center;
+}
+
+.navbar #list {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.navbar #list li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin-left: 10px;
+  padding: 6px 16px;
+  border-radius: 18px;
+}
+
+.navbar #list li:hover{
+  background: #002655;
+}
+
+
+.navbar #list li a {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #AC2B48;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Baloo 2', cursive;
+}
+
+.navbar #list li a i {
+  margin-right: 10px;
+  color: #AC2B48;
+}
+
+#sidemenu,
+#closemenu {
+  position: relative;
+  top: 10px;
+  display: none;
+}
+
+#sidemenu {
+  top: 25%;
+  font-size: 30px;
+  right: -35%;
+  transition: .2s;
+  color: #AC2B48;
+}
+
+#closemenu {
+  font-size: 35px;
+  margin-top: 0;
+  left: 15px;
+  z-index: 10;
+  transition: .2s;
+  color: white;
+}
+
+#sidemenu:hover,
+#closemenu:hover {
+  transform: rotate(15deg);
+  transform-origin: center;
+  color: orange;
+}
+
+/* Navigation Bar Ends Here */
+
+/* Hearder section starts here */
+
+.typewriter {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  /*background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(/images/header-img.svg);*/
+}
+.typewriter img{
+  height: 100%;
+  width: 100%;
+}
+
+/* DEMO-SPECIFIC STYLES */
+
+.typewriter h1 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
+    typing 3.0s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+.typewriter h1 {
+  font-size: 3rem;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 300px
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #000C96
+  }
+}
+
+#test_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30vh;
+}
+
+::selection {
+  color: #fff;
+  background: #17A2B8;
+}
+
+.wrapper {
+  width: 770px;
+  padding: 35px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper .input-field {
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+}
+
+.wrapper .content-box {
+  padding: 13px 20px 0;
+  border-radius: 10px;
+  border: 1px solid #bfbfbf;
+}
+
+.content-box .typing-text {
+  overflow: hidden;
+  max-height: 256px;
+}
+
+.typing-text::-webkit-scrollbar {
+  width: 0;
+}
+
+.typing-text p {
+  font-size: 21px;
+  text-align: justify;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+
+.typing-text p span {
+  position: relative;
+}
+
+.typing-text p span.correct {
+  color: #56964f;
+}
+
+.typing-text p span.incorrect {
+  color: #cb3439;
+  outline: 1px solid #fff;
+  background: #ffc0cb;
+  border-radius: 4px;
+}
+
+.typing-text p span.active {
+  color: #17A2B8;
+}
+
+.typing-text p span.active::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 5px;
+  background: #17A2B8;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width:700px) {
+  @keyframes typing {
+    from {
+      width: 0
+    }
+
+    to {
+      width: 80%
+    }
+  }
+}
+
+/* header Section ends hare */
+
+/* Type tester starts here */
+
+.content-box .content {
+  margin-top: 17px;
+  display: flex;
+  padding: 12px 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #bfbfbf;
+}
+
+.content button {
+  outline: none;
+  border: none;
+  width: 105px;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #464AFF;
+  transition: transform 0.3s ease;
+}
+
+.content button:active {
+  transform: scale(0.97);
+}
+
+.content .result-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: calc(100% - 140px);
+  justify-content: space-between;
+}
+
+.result-details li {
+  display: flex;
+  height: 20px;
+  list-style: none;
+  position: relative;
+  align-items: center;
+}
+
+.result-details li:not(:first-child) {
+  padding-left: 22px;
+  border-left: 1px solid #bfbfbf;
+}
+
+.result-details li p {
+  font-size: 19px;
+}
+
+.result-details li span {
+  display: block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+li span b {
+  font-weight: 500;
+}
+
+li:not(:first-child) span {
+  font-weight: 500;
+}
+
+
+/* =======================
+******* level Section ******
+========================*/
+nav {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+}
+
+nav h4 {
+  margin: 1rem 0;
+  color: black;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+nav ul li {
+  margin: 0 1rem;
+  list-style: none;
+}
+
+nav ul li a {
+  color: black;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: .5rem .6rem;
+  background: white;
+  border-radius: 1.3rem;
+  font-family: 'Maven Pro', sans-serif;
+  transition: .8s
+}
+
+nav ul li a:hover {
+  background: #464AFF;
+  color: cornsilk;
+  transform: scale(1.05);
+}
+
+.activelevel {
+  background: #8993FF;
+  color: white;
+}
+
+/* level Section ends hare */
+
+/* footer section starts here */
+
+footer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  height: 10rem;
+}
+
+/* footer Section ends hare */
+
+@media (max-width: 745px) {
+  .wrapper {
+    padding: 20px;
+  }
+
+  .typewriter h1 {
+    font-size: 1rem;
+  }
+
+  .content-box .content {
+    padding: 20px 0;
+  }
+
+  .content-box .typing-text {
+    max-height: 100%;
+  }
+
+  .typing-text p {
+    font-size: 19px;
+    text-align: left;
+  }
+
+  .content button {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+
+  .content .result-details {
+    width: 100%;
+  }
+
+  .result-details li:not(:first-child) {
+    border-left: 0;
+    padding: 0;
+  }
+
+  .result-details li p,
+  .result-details li span {
+    font-size: 17px;
+  }
+
+  #sidemenu,
+  #closemenu {
+    display: block;
+  }
+
+  .navbar {
+    width: 100%;
+
+  }
+
+  .navbar #list {
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    right: -50%;
+    display: inline-block;
+    background: #464AFF;
+    padding: 60px 10px 0 10px;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: .5s;
+  }
+
+  .navbar #list li {
+    margin-left: -5px;
+    margin-top: 30px;
+  }
+
+  /* Responsive level section */
+
+  nav ul li a {
+    color: black;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: .5rem .6rem;
+    border-radius: 1.3rem;
+    font-family: 'Maven Pro', sans-serif;
+  }
+
+  nav ul li {
+    margin: 0 .5rem;
+    list-style: none;
+  }
+}
+
+@media (max-width: 518px) {
+  .wrapper .content-box {
+    padding: 10px 15px 0;
+  }
+
+  .typing-text p {
+    font-size: 18px;
+  }
+
+  .typewriter h1 {
+    font-size: 1rem;
+  }
+
+  .result-details li {
+    margin-bottom: 10px;
+  }
+
+  .content button {
+    margin-top: 10px;
+  }
+
+  /*
+  Navigation Bar for small screen
+  */
+  #sidemenu,
+  #closemenu {
+    display: block;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar #list {
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    right: -50%;
+    display: inline-block;
+    background: #464AFF;
+    padding: 60px 10px 0 10px;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: .5s;
+  }
+
+  .navbar #list li {
+    margin-left: -5px;
+    margin-top: 30px;
+  }
+
+  .navbar #list li a {
+    color: #fff;
+  }
+
+  .navbar #list li a i {
+    color: #fff;
+  }
+
+}
